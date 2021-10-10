@@ -4,5 +4,36 @@
   "python.linting.pylintEnabled": true, // Activate pylint
   "python.linting.pylintUseMinimalCheckers": false, // enable Pylint's own default rules
   "python.linting.flake8Enabled": true, //Enable flake8
-  "python.linting.pycodestyleEnabled": true //Enable pycodestyle
+  "python.linting.pycodestyleEnabled": true,
+  "appService.zipIgnorePattern": [
+    "__pycache__{,/**}",
+    "*.py[cod]",
+    "*$py.class",
+    ".Python{,/**}",
+    "build{,/**}",
+    "develop-eggs{,/**}",
+    "dist{,/**}",
+    "downloads{,/**}",
+    "eggs{,/**}",
+    ".eggs{,/**}",
+    "lib{,/**}",
+    "lib64{,/**}",
+    "parts{,/**}",
+    "sdist{,/**}",
+    "var{,/**}",
+    "wheels{,/**}",
+    "share/python-wheels{,/**}",
+    "*.egg-info{,/**}",
+    ".installed.cfg",
+    "*.egg",
+    "MANIFEST",
+    ".env{,/**}",
+    ".venv{,/**}",
+    "env{,/**}",
+    "venv{,/**}",
+    "ENV{,/**}",
+    "env.bak{,/**}",
+    "venv.bak{,/**}",
+    ".vscode{,/**}"
+  ] //Enable pycodestyle
 }
