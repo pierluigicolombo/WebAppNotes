@@ -1,0 +1,8 @@
+{
+  "python.pythonPath": "venv\\Scripts\\python.exe",
+  "python.linting.enabled": true, // Activate linting
+  "python.linting.pylintEnabled": true, // Activate pylint
+  "python.linting.pylintUseMinimalCheckers": false, // enable Pylint's own default rules
+  "python.linting.flake8Enabled": true, //Enable flake8
+  "python.linting.pycodestyleEnabled": true //Enable pycodestyle
+}
