@@ -11,7 +11,7 @@ auth = Blueprint('auth', __name__)
 @auth.route('login')
 def login():
     '''
-    function that handle the login
+    function that handles the login
     '''
     return "<p>Login<p>"
 
@@ -19,14 +19,14 @@ def login():
 @auth.route('logout')
 def logout():
     '''
-    function that handle the logout
+    function that handles the logout
     '''
     return "<p>Logout<p>"
 
 
-@auth.route('signin')
-def signin():
+@auth.route('sign-up')
+def sign_up():
     '''
-    function that handle the signin
+    function that handles the sign up
     '''
-    return "<p>Signin<p>"
+    return "<p>Sign-up<p>"
