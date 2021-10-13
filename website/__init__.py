@@ -2,11 +2,13 @@
 create the app flask
 '''
 
-
+from os import path
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 from .views import views
 from .auth import auth
-from flask_sqlalchemy import SQLAlchemy
+
+
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
@@ -25,4 +27,16 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
+    from .models import User, Note
+
+    create_database(app)
     return app
+
+
+def create_database(app):
+    '''
+    create database if not exists
+    '''
+    if not path.exists('website/' + DB_NAME):
+        db.create_all(app=app)
+        print("created database")
