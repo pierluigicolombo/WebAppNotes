@@ -3,7 +3,6 @@ views for auth
 '''
 
 
-
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
@@ -18,7 +17,7 @@ def login():
     '''
     function that handles the login
     '''
-    if request.method=='POST':
+    if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
 
@@ -32,7 +31,7 @@ def login():
                 flash('incorrect password, try again', category='error')
         else:
             flash("user doesn't exist", category='error')
-    
+
     return render_template("login.html", user=current_user)
 
 
@@ -64,16 +63,18 @@ def sign_up():
         elif len(email) < 4:
             flash('Email must be greater than 3 characters', category='error')
         elif len(first_name) < 2:
-            flash('FirstName must be greater than 1 characters', 
+            flash('FirstName must be greater than 1 characters',
                   category='error')
         elif password1 != password2:
             flash("password doesn't match", category='error')
         elif len(password1) < 7:
-            flash("password too short, lenght must be at least 7 characters", 
+            flash("password too short, lenght must be at least 7 characters",
                   category='error')
         else:
             # add user
-            new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))
+            new_user = User(email=email, first_name=first_name,
+                            password=generate_password_hash(password1,
+                            method='sha256'))
             db.session.add(new_user)
             db.session.commit()
             login_user(user, remember=True)
