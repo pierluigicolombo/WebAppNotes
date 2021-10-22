@@ -37,11 +37,13 @@ def login():
 
 
 @auth.route('logout')
+@login_required()
 def logout():
     '''
     function that handles the logout
     '''
-    return render_template("logout.html")
+    logout_user()
+    return redirect(url_for('auth.login'))
 
 
 @auth.route('sign-up', methods=['GET', 'POST'])
