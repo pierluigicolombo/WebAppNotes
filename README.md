@@ -1,6 +1,4 @@
-21_flaskNoteWebsite
-
-Simple webApp for uploading and deleting note. The webApp handle:
+Simple webApp for uploading and deleting note. The webApp handles:
 * user registration
 * user login
 * user logout
