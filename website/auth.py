@@ -77,7 +77,7 @@ def sign_up():
                             method='sha256'))
             db.session.add(new_user)
             db.session.commit()
-            login_user(user, remember=True)
+            login_user(new_user, remember=True)
             flash("user created", category='success')
 
             return redirect(url_for('views.home'))
