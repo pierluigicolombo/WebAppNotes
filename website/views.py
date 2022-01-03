@@ -31,6 +31,7 @@ def home():
 
 
 @views.route('/delete-note', methods=['POST'])
+@login_required
 def delete_note():
     '''
     delete note
